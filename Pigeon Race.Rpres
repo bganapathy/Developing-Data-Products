@@ -1,0 +1,58 @@
+Pigeon Race
+========================================================
+author: Bhavani Ganapathy
+date: `r date()`
+
+Introduction to my first Shiny Application
+========================================================
+
+- We all have a say on if modern day drones are good or bad. 
+- What do you think ?
+- Please take a minute and review my shiny application before you conclude on this topic.
+- Don't we all like to know some history with the historical data on the topic we want to debate on ?
+- Definitely yes, more so because we all belong to the clan of aspiring data scientists :)
+Background information about the App.
+========================================================
+
+- The application is about Pigeon Race.
+- Yes, you read it right! It is the pigeon Race.
+- While I was researching on the net to find a funny data set, I came across the below website.
+- http://blog.yhathq.com/posts/7-funny-datasets.html
+- Pigeons were once a high tech form of communication.
+- Some were even used as spies during WWII.
+- Now, aren't you all ready to learn more about WWII spies :)
+Information about the data set used in the App.
+========================================================
+
+- American Racing Pigeon Union
+- Yes, this union does exist and it was created in 1910.
+- They have great dataset for pigeon race results over the years.
+- The author, Greg of the blog post mentioned above has a good subset of data extracted for this data set, which I have used for my shiny app.
+
+Slide With Code
+========================================================
+
+```{r}
+setwd("C:/Data")
+#Url to the webpage on the internet by Greg.
+ url <- "http://blog.yhathq.com/static/misc/data/pigeon-racing.csv"
+#This script first checks if the CSV file already exists, if not it will download the file.If it already exists it will reuse the existing file.
+if (!file.exists('pigeon-racing.csv')) {
+        download.file(url, 'pigeon-racing.csv')
+}
+
+#Read the data to a dataframe.
+pigeon<-read.csv("pigeon-racing.csv", header = TRUE)
+```
+Check the properties of the data.
+========================================================
+```{r}
+summary(pigeon)
+```
+Conclusion
+========================================================
+
+- Please check out my Pigeon Race shiny App @ https://bganapathy.shinyapps.io/Project
+- If you didn't learn anything from this, I hope atleast it brought a smile on your face.
+- Thank you for your time.
+- Wish you all the best in your endeavour of being a Data Scientist.
